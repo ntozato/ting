@@ -1,5 +1,23 @@
+from ting_file_management.file_management import txt_importer
+import sys
+
+
+# https://www.geeksforgeeks.org/sys-stdout-write-in-python/
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    content = txt_importer(path_file)
+
+    res = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(content),
+        "linhas_do_arquivo": content
+    }
+
+    for item in instance.data:
+        if item["nome_do_arquivo"] == path_file:
+            return None
+
+    instance.enqueue(res)
+    sys.stdout.write(str(res))
 
 
 def remove(instance):

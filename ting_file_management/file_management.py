@@ -18,5 +18,6 @@ def txt_importer(path_file):
     except FileNotFoundError:
         sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
 
-# teste = txt_importer("statics/arquivo_teste.txt")
-# print(teste)
+
+teste = txt_importer("statics/arquivo_teste.txt")
+print(teste)
